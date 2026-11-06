@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Week 4 HTML Assignment</title>
-</head>
 <body>
-    <h1>INFO1012 Week 4 Task</h1>
-    <p>My Student ID: 【2518040228】</p>
-    <p>Hello, this is my first HTML page for the GitHub and HTML practical work.</p>
+    <input type="number" id="num1Input" placeholder="输入第一个数">
+    <input type="number" id="num2Input" placeholder="输入第二个数">
+    <br><br>
+    <button id="add">加法</button>
+    <button id="sub">减法</button>
+    <button id="mul">乘法</button>
+    <button id="div">除法</button>
+    <div id="resultBox"></div>
 
-    <h2>About Me</h2>
-    <p>I am learning how to use VS Code, Git and GitHub to build and share web pages.</p>
-
-    <ul>
-        <li>Step 1: Write HTML code</li>
-        <li>Step 2: Commit changes in Git</li>
-        <li>Step 3: Push to GitHub repository</li>
-    </ul>
+<script>
+//加法
+document.getElementById('add').addEventListener('click',function(){
+    let n1 = Number(num1Input.value);
+    let n2 = Number(num2Input.value);
+    let res = n1 + n2;
+    resultBox.innerText = `Result: ${res}`;
+})
+//减法
+document.getElementById('sub').addEventListener('click',function(){
+    let n1 = Number(num1Input.value);
+    let n2 = Number(num2Input.value);
+    let res = n1 - n2;
+    resultBox.innerText = `Result: ${res}`;
+})
+//乘法
+document.getElementById('mul').addEventListener('click',function(){
+    let n1 = Number(num1Input.value);
+    let n2 = Number(num2Input.value);
+    let res = n1 * n2;
+    resultBox.innerText = `Result: ${res}`;
+})
+//除法，包含if判断防止除以0
+document.getElementById('div').addEventListener('click',function(){
+    let n1 = Number(num1Input.value);
+    let n2 = Number(num2Input.value);
+    if(n2 == 0){
+        resultBox.innerText = "Error: Cannot divide by zero";
+    }else{
+        let res = n1 / n2;
+        resultBox.innerText = `Result: ${res}`;
+    }
+})
+</script>
 </body>
 </html>
+
+ 
